@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>register</title>
+	<script>
+		function register() {
+		  var pw = document.getElementById('pw').value;
+		  var repw = document.getElementById('repw').value;
+		  if(pw.length < 10) {
+			alert('10글자 이상');
+			return false;
+		}
+		  if( pw != repw ) {
+			alert("비밀번호 오류");
+			return false;
+		  } else{
+			alert("비밀번호 일치, 회원가입 성공");
+			return true;
+		  }
+		}
+	  </script>
+	<style>
+		ul{
+			list-style: none;
+		}
+	</style>
+</head>
+<body>
+	<form>
+		<fieldset>
+			<legend>회원 가입</legend>
+			<ul>
+				<li>
+					<label>아이디<input id="id" type="text" autofocus placeholder="ID" required></label>
+				</li>
+					<label>비밀번호<input id="pw" type="password" placeholder="Password" required></label>
+				</li>
+				<li>
+					<label>비밀번호 확인<input id="repw" type="password" placeholder="Password 확인" required></label>
+				</li>
+				<br>
+				<div>
+					<input type="button" value="회원가입" onclick="register()">
+					<input type="reset" value="삭제하기">
+				</div>
+		</fieldset>
+	</form>
+</body>
+</html>
